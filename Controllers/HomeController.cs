@@ -20,13 +20,13 @@ public class HomeController : Controller
         {
             Paquete i = new Paquete(ORTWorld.ListaHoteles[hotel-1],ORTWorld.ListaAereos[aereo-1],ORTWorld.ListaExcursiones[excursion-1]);
             ORTWorld.Paquetes.Add(ORTWorld.ListaDestinos[destino-1],i);
-            return Index();
+            return View("Index");
         }
         else
         {
             Console.WriteLine("Datos Erroneos");
             CargarListas();
-            return SelectPaquete();
+            return View("SelectPaquete");
         }
     }
     public void CargarListas()

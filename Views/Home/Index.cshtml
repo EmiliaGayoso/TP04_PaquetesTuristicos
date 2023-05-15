@@ -1,5 +1,15 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
+<a href='Url.Action("SelectPaquete")'>Seleccionar Paquete</a>
 
-<h1>TP XX - Index</h1>
+<h1>PAQUETES:</h1>
+<ul>
+@foreach (string destino in ViewBag.Paquetes.keys)
+{
+    <h3>@destino</h3>
+   <li><h3>@ViewBag.Paquetes[destino].Hotel</h3></li> 
+   <li> <h3>@ViewBag.Paquetes[destino].Aereo</h3></li>
+   <li><h3>@ViewBag.Paquetes[destino].Excursion</h3></li>
+}
+</ul>
