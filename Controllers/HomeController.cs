@@ -11,19 +11,30 @@ public class HomeController : Controller
     }
     public IActionResult SelectPaquete()
     {
+        CargarListas();
+        return View();
+    }
+    public IActionResult GuardarPaquete (int destino, int hotel, int aereo, int excursion)
+    {
+        if(destino>0 && hotel>0 && aereo>0 && excursion>0)
+        {
+            Paquete i = new Paquete(ORTWorld.ListaHoteles[hotel-1],ORTWorld.ListaAereos[aereo-1],ORTWorld.ListaExcursiones[excursion-1]);
+            ORTWorld.Paquetes.Add(ORTWorld.ListaDestinos[destino-1],i);
+            return Index();
+        }
+        else
+        {
+            Console.WriteLine("Datos Erroneos");
+            CargarListas();
+            return SelectPaquete();
+        }
+    }
+    public void CargarListas()
+    {
         ViewBag.Destinos=ORTWorld.ListaDestinos;
         ViewBag.Aerolineas=ORTWorld.ListaAereos;
         ViewBag.Hoteles=ORTWorld.ListaHoteles;
         ViewBag.Excursiones=ORTWorld.ListaExcursiones;
-        return View();
-    }
-    public IActionResult GuardarPaquete (int Destino, int Hotel, int Aereo, int Excursion)
-    {
-        if(Destino>0 && Hotel>0 && Aereo>0 && Excursion>0)
-        {
-            Paquete i = new Paquete(Hotel, Aereo, Excursion);
-        }
-
     }
 
 }
