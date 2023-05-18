@@ -16,11 +16,11 @@ public class HomeController : Controller
     }
     public IActionResult GuardarPaquete (int destino, int hotel, int aereo, int excursion)
     {
-        if(destino>0 && hotel>0 && aereo>0 && excursion>0)
+        if(destino>=0 && hotel>0 && aereo>0 && excursion>0)
         {
             Paquete i = new Paquete(ORTWorld.ListaHoteles[hotel-1],ORTWorld.ListaAereos[aereo-1],ORTWorld.ListaExcursiones[excursion-1]);
-            ORTWorld.Paquetes.Add(ORTWorld.ListaDestinos[destino-1],i);
-            return View("Index");
+            ORTWorld.IngresarPaquete(ORTWorld.ListaDestinos[destino],i);
+            return RedirectToAction("Index");
         }
         else
         {

@@ -8,9 +8,9 @@ class ORTWorld
 
     public static bool IngresarPaquete(string destinoSeleccionado, Paquete paquete)
     {
-        return Paquetes.ContainsKey(destinoSeleccionado);
+        
         if(!Paquetes.ContainsKey(destinoSeleccionado))
         Paquetes.Add(destinoSeleccionado,paquete);
-        
+        return Paquetes.ContainsKey(destinoSeleccionado);
     }
 }

@@ -1,24 +1,31 @@
-<form action='@Url.Action("GuardarPaquete")'>
+<form action='@Url.Action("GuardarPaquete")'> 
+    <h3>Seleccione destino:</h3>
 <select name="destino">
-    @for(int i=0;i<ViewBag.ListaDestinos;i++)
-    {<option value=@i>@ViewBag.ListaDestinos[i]</option>}
-</select>
+    @for(int i=0;i<ViewBag.Destinos.Count;i++)
+    {<option value=@i>@ViewBag.Destinos[i]</option>}
+</select><br>
 
-    @foreach (string aereo in ViewBag.ListaAereos)
+    <h3>Seleccione aereolinea:</h3>
+    <input type="number" name="aereo" min="1" max="10"><br>
+
+    @foreach (string aereo in ViewBag.Aerolineas)
     {<img src="~/imgs/aerolineas/@aereo">
-    }
-    <input type="number" name="aereo" min="1" max="10">
-
-
-    @foreach (string hotel in ViewBag.ListaHoteles)
-    {<img src="~/imgs/hoteles/@hotel">
-    }
-    <input type="number" name="hotel" min="1" max="10">
+    }<br>
     
-    @foreach (string excursion in ViewBag.ListaExcursiones)
-    {<img src="~/imgs/excursiones/@excursion">
-    }
-    <input type="number" name="excursion" min="1" max="10">
 
+    <h3>Seleccione hotel:</h3>
+    <input type="number" name="hotel" min="1" max="10"><br>
+    @foreach (string hotel in ViewBag.Hoteles)
+    {<img src="~/imgs/hoteles/@hotel">
+    }<br>
+    
+    
+    <h3>Seleccione excursion:</h3>
+    <input type="number" name="excursion" min="1" max="10"><br>
+
+    @foreach (string excursion in ViewBag.Excursiones)
+    {<img src="~/imgs/excursiones/@excursion">
+    }<br>
+    
 <input type="submit" value="Crear Paquete">
 </form>
