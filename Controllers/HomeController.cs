@@ -14,6 +14,11 @@ public class HomeController : Controller
         CargarListas();
         return View();
     }
+    public void MensajeError()
+    {
+        ViewBag.MensajeError="Datos erroneos. Ingrese nuevamente";
+
+    }
     public IActionResult GuardarPaquete (int destino, int hotel, int aereo, int excursion)
     {
         if(destino>=0 && hotel>0 && aereo>0 && excursion>0)
@@ -24,10 +29,15 @@ public class HomeController : Controller
         }
         else
         {
-            Console.WriteLine("Datos Erroneos");
+            MensajeError();
             CargarListas();
             return View("SelectPaquete");
         }
+    }
+    public IActionResult EliminarPaquete(string destino)
+    {
+        ORTWorld.Paquetes.Remove(destino);
+        return RedirectToAction("Index");
     }
     public void CargarListas()
     {

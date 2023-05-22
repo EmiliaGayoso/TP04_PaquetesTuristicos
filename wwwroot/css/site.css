@@ -3,7 +3,7 @@ html
   font-size: 14px;
   position: relative;
   min-height: 100%;
-  background-color: rgb(224, 224, 224);
+  background-color: rgb(222, 248, 224);
 }
 
 @media (min-width: 768px) {
@@ -15,7 +15,14 @@ html
 }
 
 body {
-  margin: 20px 60px 0px 20px;
+  margin: 1px 1px 1px 1px;
+}
+header div h1
+{
+  color: white;
+  text-align: center;
+  letter-spacing: 5px;
+  background-color: rgb(114, 255, 121);
 }
 
 footer {
@@ -30,24 +37,46 @@ img
   float: left;
   margin: 4px;
   padding: 2px;
-  border: 3px solid rgb(209, 208, 208);
+  border: 3px solid rgb(134, 207, 177);
 }
 h1{
-  color: rgb(53, 53, 53);
+  color: rgb(24, 122, 0);
   /*text-shadow: 2px 2px 2px rgb(56, 76, 255); probando diseño*/
   letter-spacing: 3px;
-  
+  text-align: center;
 }
 h2{
-  color: rgb(110, 110, 110);
+  color: rgb(121, 194, 106);
   text-transform: uppercase;
 }
 h3{
-  color:rgb(143, 142, 142) ;
+  color:rgb(145, 218, 139) ;
   text-decoration: underline;
   clear:both;
+}
+h4{
+  color: rgb(216, 177, 3);
+  text-transform: uppercase;
 }
 option
 {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+a{
+  color: rgb(104, 216, 100);
+  text-decoration: none;
+  
+}
+.eliminar
+{
+  clear:both;
+}
+[type=submit]{
+  background-color: rgb(178, 252, 203);
+}
+select,[type=number]{
+  background-color:rgb(179, 230, 196) ;
+  border-color:rgb(121, 194, 106); ;
+}
+
+

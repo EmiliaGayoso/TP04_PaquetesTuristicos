@@ -1,11 +1,13 @@
 <form action='@Url.Action("GuardarPaquete")'> 
-    <h2>Seleccione destino:</h2>
+    <h4>@ViewBag.MensajeError</h4>
+    <h2>🟢Seleccione destino🟢</h2>
+    
 <select name="destino">
     @for(int i=0;i<ViewBag.Destinos.Count;i++)
     {<option value=@i>@ViewBag.Destinos[i]</option>}
 </select><br>
 
-    <h3>Seleccione aereolinea:</h3>
+    <h3>Seleccione aereolinea✈️</h3>
     <input type="number" name="aereo" min="1" max="10"><br>
 
     @foreach (string aereo in ViewBag.Aerolineas)
@@ -13,14 +15,14 @@
     }<br>
     
 
-    <h3>Seleccione hotel:</h3>
+    <h3>Seleccione hotel🏨</h3>
     <input type="number" name="hotel" min="1" max="10"><br>
     @foreach (string hotel in ViewBag.Hoteles)
     {<img src="~/imgs/hoteles/@hotel">
     }<br>
     
     
-    <h3>Seleccione excursion:</h3>
+    <h3>Seleccione excursion🎆</h3>
     <input type="number" name="excursion" min="1" max="10"><br>
 
     @foreach (string excursion in ViewBag.Excursiones)
