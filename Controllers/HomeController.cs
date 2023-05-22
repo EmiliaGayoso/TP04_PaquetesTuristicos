@@ -36,5 +36,4 @@ public class HomeController : Controller
         ViewBag.Hoteles=ORTWorld.ListaHoteles;
         ViewBag.Excursiones=ORTWorld.ListaExcursiones;
     }
-
 }

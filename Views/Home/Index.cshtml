@@ -3,13 +3,14 @@
 }
 <a href='@Url.Action("SelectPaquete")'>Seleccionar Paquete</a>
 
-<h1>PAQUETES:</h1>
-<ul>
+<h1>PAQUETES</h1>
+
 @foreach (string destino in ViewBag.Paquetes.Keys)
 {
     <h3>@destino</h3>
-   <li>@ViewBag.Paquetes[destino].Hotel</li> 
-   <li> @ViewBag.Paquetes[destino].Aereo</li>
-   <li>@ViewBag.Paquetes[destino].Excursion</li>
+    <div>
+   <img src="imgs/hoteles/@ViewBag.Paquetes[destino].Hotel"> 
+   <img src="imgs/aerolineas/@ViewBag.Paquetes[destino].Aereo">
+   <img src="imgs/excursiones/@ViewBag.Paquetes[destino].Excursion">
+   </div>
 }
-</ul>

@@ -1,12 +1,16 @@
-html {
+html 
+{
   font-size: 14px;
   position: relative;
   min-height: 100%;
+  background-color: rgb(224, 224, 224);
 }
 
 @media (min-width: 768px) {
   html {
     font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    align-self: center;
   }
 }
 
@@ -21,6 +25,29 @@ footer {
 }
 img
 {
-  width: 10%;
+  width: 230px;
+  height: 130px;
+  float: left;
+  margin: 4px;
+  padding: 2px;
+  border: 3px solid rgb(209, 208, 208);
+}
+h1{
+  color: rgb(53, 53, 53);
+  /*text-shadow: 2px 2px 2px rgb(56, 76, 255); probando diseño*/
+  letter-spacing: 3px;
   
+}
+h2{
+  color: rgb(110, 110, 110);
+  text-transform: uppercase;
+}
+h3{
+  color:rgb(143, 142, 142) ;
+  text-decoration: underline;
+  clear:both;
+}
+option
+{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
